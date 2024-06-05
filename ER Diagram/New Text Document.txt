@@ -1,0 +1,167 @@
+Creating an Entity-Relationship (ER) diagram for an online movie ticket booking system like "BookMyShow" involves identifying the main entities involved and the relationships between them. Here are the primary entities and their attributes:
+
+User
+
+UserID (PK)
+Name
+Email
+Password
+PhoneNumber
+Address
+Dob
+Movie
+
+MovieID (PK)
+Title
+Duration
+Language
+Rating
+Description
+ReleaseDate
+Cinema
+
+CinemaID (PK)
+Name
+Location
+TotalScreens
+Screen
+
+ScreenID (PK)
+CinemaID (FK)
+ScreenNumber
+TotalSeats
+Show
+
+ShowID (PK)
+MovieID (FK)
+ScreenID (FK)
+ShowTime
+ShowDate
+Seat
+
+SeatID (PK)
+ScreenID (FK)
+SeatNumber
+SeatType
+Booking
+
+BookingID (PK)
+UserID (FK)
+ShowID (FK)
+BookingDate
+TotalAmount
+BookingDetails
+
+BookingDetailsID (PK)
+BookingID (FK)
+SeatID (FK)
+Price
+Payment
+
+PaymentID (PK)
+BookingID (FK)
+PaymentDate
+PaymentAmount
+PaymentMethod
+Relationships
+A User can have multiple Bookings.
+A Booking is made for one Show but can include multiple Seats.
+Each Booking is associated with one Payment.
+A Movie can have multiple Shows.
+A Cinema has multiple Screens.
+Each Screen can host multiple Shows.
+Each Screen contains multiple Seats.
+Each Show happens in one Screen.
+BookingDetails links Booking and Seat.
+ER Diagram
+The ER diagram can be represented visually as follows:
+
+plaintext
+Copy code
+[User] ----< [Booking] >---- [Show] ----> [Movie]
+  |                  |               |
+  |                  v               v
+[Payment] <----- [BookingDetails] >--< [Seat] ----> [Screen] ----> [Cinema]
+Now, let's translate this into a detailed diagram.
+
+plaintext
+Copy code
+[User]
+| UserID (PK)
+| Name
+| Email
+| Password
+| PhoneNumber
+| Address
+
+[Movie]
+| MovieID (PK)
+| Title
+| Genre
+| Duration
+| Language
+| Rating
+| Description
+| ReleaseDate
+
+[Cinema]
+| CinemaID (PK)
+| Name
+| Location
+| TotalScreens
+
+[Screen]
+| ScreenID (PK)
+| CinemaID (FK)
+| ScreenNumber
+| TotalSeats
+
+[Show]
+| ShowID (PK)
+| MovieID (FK)
+| ScreenID (FK)
+| ShowTime
+| ShowDate
+
+[Seat]
+| SeatID (PK)
+| ScreenID (FK)
+| SeatNumber
+| SeatType
+
+[Booking]
+| BookingID (PK)
+| UserID (FK)
+| ShowID (FK)
+| BookingDate
+| TotalAmount
+
+[BookingDetails]
+| BookingDetailsID (PK)
+| BookingID (FK)
+| SeatID (FK)
+| Price
+
+[Payment]
+| PaymentID (PK)
+| BookingID (FK)
+| PaymentDate
+| PaymentAmount
+| PaymentMethod
+These tables are interconnected with their respective foreign keys to maintain relationships. Let's create a visual ER diagram next. I'll use a diagramming tool to illustrate this ER diagram.
+
+Output image
+Here is the ER diagram for the online movie ticket booking system:
+
+Entities: User, Movie, Cinema, Screen, Show, Seat, Booking, BookingDetails, Payment
+Relationships:
+User to Booking
+Booking to Show
+Booking to Payment
+BookingDetails to Booking
+BookingDetails to Seat
+Show to Movie
+Show to Screen
+Screen to Cinema
+Screen to Seat
+This diagram visually represents the entities, their attributes, and the relationships between them. Each entity is connected to the relevant entities through their foreign keys. ​

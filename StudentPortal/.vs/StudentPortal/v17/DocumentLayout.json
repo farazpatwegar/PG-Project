@@ -1,0 +1,173 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\IACSD\\.Net Technology\\dotnet workspace\\StudentPortal\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2D7025F0-9EDA-4C93-9845-7709EC0C3E47}|StudentPortal.web\\StudentPortal.web.csproj|d:\\iacsd\\.net technology\\dotnet workspace\\studentportal\\studentportal.web\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D7025F0-9EDA-4C93-9845-7709EC0C3E47}|StudentPortal.web\\StudentPortal.web.csproj|solutionrelative:studentportal.web\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D7025F0-9EDA-4C93-9845-7709EC0C3E47}|StudentPortal.web\\StudentPortal.web.csproj|d:\\iacsd\\.net technology\\dotnet workspace\\studentportal\\studentportal.web\\controllers\\studentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D7025F0-9EDA-4C93-9845-7709EC0C3E47}|StudentPortal.web\\StudentPortal.web.csproj|solutionrelative:studentportal.web\\controllers\\studentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D7025F0-9EDA-4C93-9845-7709EC0C3E47}|StudentPortal.web\\StudentPortal.web.csproj|d:\\iacsd\\.net technology\\dotnet workspace\\studentportal\\studentportal.web\\views\\students\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2D7025F0-9EDA-4C93-9845-7709EC0C3E47}|StudentPortal.web\\StudentPortal.web.csproj|solutionrelative:studentportal.web\\views\\students\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D7025F0-9EDA-4C93-9845-7709EC0C3E47}|StudentPortal.web\\StudentPortal.web.csproj|d:\\iacsd\\.net technology\\dotnet workspace\\studentportal\\studentportal.web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{2D7025F0-9EDA-4C93-9845-7709EC0C3E47}|StudentPortal.web\\StudentPortal.web.csproj|solutionrelative:studentportal.web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D7025F0-9EDA-4C93-9845-7709EC0C3E47}|StudentPortal.web\\StudentPortal.web.csproj|d:\\iacsd\\.net technology\\dotnet workspace\\studentportal\\studentportal.web\\views\\students\\list.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2D7025F0-9EDA-4C93-9845-7709EC0C3E47}|StudentPortal.web\\StudentPortal.web.csproj|solutionrelative:studentportal.web\\views\\students\\list.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D7025F0-9EDA-4C93-9845-7709EC0C3E47}|StudentPortal.web\\StudentPortal.web.csproj|d:\\iacsd\\.net technology\\dotnet workspace\\studentportal\\studentportal.web\\views\\students\\add.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2D7025F0-9EDA-4C93-9845-7709EC0C3E47}|StudentPortal.web\\StudentPortal.web.csproj|solutionrelative:studentportal.web\\views\\students\\add.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D7025F0-9EDA-4C93-9845-7709EC0C3E47}|StudentPortal.web\\StudentPortal.web.csproj|d:\\iacsd\\.net technology\\dotnet workspace\\studentportal\\studentportal.web\\models\\entites\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D7025F0-9EDA-4C93-9845-7709EC0C3E47}|StudentPortal.web\\StudentPortal.web.csproj|solutionrelative:studentportal.web\\models\\entites\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D7025F0-9EDA-4C93-9845-7709EC0C3E47}|StudentPortal.web\\StudentPortal.web.csproj|d:\\iacsd\\.net technology\\dotnet workspace\\studentportal\\studentportal.web\\models\\addstudentviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D7025F0-9EDA-4C93-9845-7709EC0C3E47}|StudentPortal.web\\StudentPortal.web.csproj|solutionrelative:studentportal.web\\models\\addstudentviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D7025F0-9EDA-4C93-9845-7709EC0C3E47}|StudentPortal.web\\StudentPortal.web.csproj|d:\\iacsd\\.net technology\\dotnet workspace\\studentportal\\studentportal.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D7025F0-9EDA-4C93-9845-7709EC0C3E47}|StudentPortal.web\\StudentPortal.web.csproj|solutionrelative:studentportal.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\IACSD\\.Net Technology\\dotnet workspace\\StudentPortal\\StudentPortal.web\\appsettings.json",
+              "RelativeDocumentMoniker": "StudentPortal.web\\appsettings.json",
+              "ToolTip": "D:\\IACSD\\.Net Technology\\dotnet workspace\\StudentPortal\\StudentPortal.web\\appsettings.json",
+              "RelativeToolTip": "StudentPortal.web\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-07-06T20:03:32.397Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "D:\\IACSD\\.Net Technology\\dotnet workspace\\StudentPortal\\StudentPortal.web\\Views\\Students\\Edit.cshtml",
+              "RelativeDocumentMoniker": "StudentPortal.web\\Views\\Students\\Edit.cshtml",
+              "ToolTip": "D:\\IACSD\\.Net Technology\\dotnet workspace\\StudentPortal\\StudentPortal.web\\Views\\Students\\Edit.cshtml",
+              "RelativeToolTip": "StudentPortal.web\\Views\\Students\\Edit.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACQAAABQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-06T19:17:48.045Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "D:\\IACSD\\.Net Technology\\dotnet workspace\\StudentPortal\\StudentPortal.web\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "StudentPortal.web\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "D:\\IACSD\\.Net Technology\\dotnet workspace\\StudentPortal\\StudentPortal.web\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "StudentPortal.web\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-06T18:53:48.415Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "StudentsController.cs",
+              "DocumentMoniker": "D:\\IACSD\\.Net Technology\\dotnet workspace\\StudentPortal\\StudentPortal.web\\Controllers\\StudentsController.cs",
+              "RelativeDocumentMoniker": "StudentPortal.web\\Controllers\\StudentsController.cs",
+              "ToolTip": "D:\\IACSD\\.Net Technology\\dotnet workspace\\StudentPortal\\StudentPortal.web\\Controllers\\StudentsController.cs",
+              "RelativeToolTip": "StudentPortal.web\\Controllers\\StudentsController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-06T17:52:17.287Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Add.cshtml",
+              "DocumentMoniker": "D:\\IACSD\\.Net Technology\\dotnet workspace\\StudentPortal\\StudentPortal.web\\Views\\Students\\Add.cshtml",
+              "RelativeDocumentMoniker": "StudentPortal.web\\Views\\Students\\Add.cshtml",
+              "ToolTip": "D:\\IACSD\\.Net Technology\\dotnet workspace\\StudentPortal\\StudentPortal.web\\Views\\Students\\Add.cshtml",
+              "RelativeToolTip": "StudentPortal.web\\Views\\Students\\Add.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-06T17:53:57.091Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Student.cs",
+              "DocumentMoniker": "D:\\IACSD\\.Net Technology\\dotnet workspace\\StudentPortal\\StudentPortal.web\\Models\\Entites\\Student.cs",
+              "RelativeDocumentMoniker": "StudentPortal.web\\Models\\Entites\\Student.cs",
+              "ToolTip": "D:\\IACSD\\.Net Technology\\dotnet workspace\\StudentPortal\\StudentPortal.web\\Models\\Entites\\Student.cs",
+              "RelativeToolTip": "StudentPortal.web\\Models\\Entites\\Student.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAA1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-06T18:07:22.177Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "List.cshtml",
+              "DocumentMoniker": "D:\\IACSD\\.Net Technology\\dotnet workspace\\StudentPortal\\StudentPortal.web\\Views\\Students\\List.cshtml",
+              "RelativeDocumentMoniker": "StudentPortal.web\\Views\\Students\\List.cshtml",
+              "ToolTip": "D:\\IACSD\\.Net Technology\\dotnet workspace\\StudentPortal\\StudentPortal.web\\Views\\Students\\List.cshtml",
+              "RelativeToolTip": "StudentPortal.web\\Views\\Students\\List.cshtml",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABgAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-06T18:58:16.728Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AddStudentViewModel.cs",
+              "DocumentMoniker": "D:\\IACSD\\.Net Technology\\dotnet workspace\\StudentPortal\\StudentPortal.web\\Models\\AddStudentViewModel.cs",
+              "RelativeDocumentMoniker": "StudentPortal.web\\Models\\AddStudentViewModel.cs",
+              "ToolTip": "D:\\IACSD\\.Net Technology\\dotnet workspace\\StudentPortal\\StudentPortal.web\\Models\\AddStudentViewModel.cs",
+              "RelativeToolTip": "StudentPortal.web\\Models\\AddStudentViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-06T18:07:13.96Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\IACSD\\.Net Technology\\dotnet workspace\\StudentPortal\\StudentPortal.web\\Program.cs",
+              "RelativeDocumentMoniker": "StudentPortal.web\\Program.cs",
+              "ToolTip": "D:\\IACSD\\.Net Technology\\dotnet workspace\\StudentPortal\\StudentPortal.web\\Program.cs",
+              "RelativeToolTip": "StudentPortal.web\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-06T16:36:44.628Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

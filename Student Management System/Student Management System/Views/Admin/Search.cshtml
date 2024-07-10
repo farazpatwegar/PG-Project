@@ -1,0 +1,41 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model List<Student_Management_System.Models.Entities.Student>
+<h1>Students</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>EmailId</td>
+            <td>MobileNo</td>
+            <td>Address</td>
+            <td>Date</td>
+            <td>Fees</td>
+            <td>Status</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            if (@student.Status == true)
+            {
+                <tr>
+                    <td>@student.Id</td>
+                <td>@student.Name</td>
+                <td>@student.EmailId</td>
+                <td>@student.MobileNo</td>
+                <td>@student.Address</td>
+                <td>@student.Date</td>
+                <td>@student.Fees</td>
+                <td>@student.Status</td>
+            </tr>}
+        }
+    </tbody>
+</table>
+<div>
+    <a class="btn btn-primary" asp-controller="Admin" asp-action="Index">Home</a>
+</div>

@@ -1,5 +1,6 @@
 package com.app.showbooking.entities;
 
+import java.sql.Time;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
@@ -30,7 +31,7 @@ public class Movie {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="movie_id")
 	private Long movieId;
-	@DateTimeFormat(pattern = "hh:mm:ss")
+	@DateTimeFormat(pattern = "HH:MM:SS")
 	private LocalTime duration;
 	@Column(length = 200)
 	private String description;
@@ -63,7 +64,7 @@ public class Movie {
 		this.rating = rating;
 		this.language = language;
 		this.releaseDate = releaseDate;
-		this.user = user;
+		this.user=user;
 	}
 
 

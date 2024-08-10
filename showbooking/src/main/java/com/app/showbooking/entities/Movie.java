@@ -22,14 +22,14 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity
-@Table(name="movies")
+@Table(name = "movies")
 @Getter
 @Setter
 @ToString
 public class Movie {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="movie_id")
+	@Column(name = "movie_id")
 	private Long movieId;
 	@DateTimeFormat(pattern = "HH:MM:SS")
 	private LocalTime duration;
@@ -37,23 +37,19 @@ public class Movie {
 	private String description;
 	@Column(length = 20)
 	private String title;
-	
-	private  double rating;
+
+	private double rating;
 	private String language;
-	@Column(name="release_date")
+	@Column(name = "release_date")
 	private LocalDate releaseDate;
-	
-	@ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
-	@JoinColumn(name="user_id",nullable=false)
+
+	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@JoinColumn(name = "user_id", nullable = false)
 	private User user;
-	
-	
 
 	public Movie() {
 		super();
 	}
-
-
 
 	public Movie(LocalTime duration, String description, String title, double rating, String language,
 			LocalDate releaseDate, User user) {
@@ -64,10 +60,17 @@ public class Movie {
 		this.rating = rating;
 		this.language = language;
 		this.releaseDate = releaseDate;
-		this.user=user;
+		this.user = user;
 	}
 
-
-
+	public Movie(Movie otherMovie) {
+		this.duration = otherMovie.duration;
+		this.description = otherMovie.description;
+		this.title = otherMovie.title;
+		this.rating = otherMovie.rating;
+		this.language = otherMovie.language;
+		this.releaseDate = otherMovie.releaseDate;
+		this.user = otherMovie.user;
+	}
 
 }

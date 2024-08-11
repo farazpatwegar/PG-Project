@@ -25,7 +25,7 @@ const Header = () => {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ml-auto">
-              <li className="nav-item"><a className="nav-link" href="index.html">Home</a></li>
+            <li className="nav-item"><Link className="nav-link" to="/Home">Home</Link></li>
               <li className="nav-item active"><a className="nav-link" href="movies.html">Movies</a></li>
               <li className="nav-item"><Link className="nav-link" to="/AboutPage">About</Link></li>
               <li className="nav-item"><a className="nav-link" href="Contact_Us.html">Contact</a></li>

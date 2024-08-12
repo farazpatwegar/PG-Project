@@ -1,16 +1,34 @@
-
+import React from 'react';
 import banner1 from '../../asset/images/banner1.jpg';
-const links = [
-  { name: 'Harshal Waghchaure', href: 'https://www.instagram.com/harsh__waghchaure/' },
-  { name: 'Utkarsha Chinde', href: 'https://www.instagram.com/utkarshaa_7768/' },
-  { name: 'Faraz Patwegar', href: 'https://www.instagram.com/faraz_patwegar/' },
-]
+
+const teamMembers = [
+  {
+    name: 'Faraz Patwegar',
+    href: 'https://www.instagram.com/faraz_patwegar/',
+    role: 'Project Lead & Developer',
+    description: 'Faraz is the visionary behind My Showz Entertainment. With expertise in full-stack development, Faraz ensures the platform delivers a seamless and engaging user experience.',
+  },
+  {
+    name: 'Utkarsha Chinde',
+    href: 'https://www.instagram.com/utkarshaa_7768/',
+    role: 'UI/UX Designer',
+    description: 'Utkarsha brings creativity and design expertise to the team. Her designs are the backbone of the platform\'s modern and user-friendly interface.',
+  },
+  {
+    name: 'Harshal Waghchaure',
+    href: 'https://www.instagram.com/harsh__waghchaure/',
+    role: 'Backend Developer',
+    description: 'Harshal specializes in building robust and scalable back-end systems. His work ensures that My Showz Entertainment runs smoothly behind the scenes.',
+  },
+];
+
 const stats = [
   { name: 'Movies', value: '65' },
   { name: 'Shows', value: '165' },
   { name: 'Staff Members', value: '463' },
   { name: 'No. of Users', value: '5063' },
-]
+];
+
 export default function About() {
   return (
     <div className="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32">
@@ -19,7 +37,7 @@ export default function About() {
         src={banner1}
         style={{
           filter: 'blur(8px)',
-          WebkitFilter: 'blur(8px)' // For Safari and older browsers
+          WebkitFilter: 'blur(8px)', // For Safari and older browsers
         }}
         className="absolute inset-0 -z-10 h-full w-full object-cover object-right md:object-center"
       />
@@ -57,9 +75,10 @@ export default function About() {
         </div>
         <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
           <div className="grid grid-cols-1 gap-x-8 gap-y-6 text-base font-semibold leading-7 text-white sm:grid-cols-2 md:flex lg:gap-x-10">
-            {links.map((link) => (
-              <a key={link.name} href={link.href}>
-                {link.name} <span aria-hidden="true">&rarr;</span>
+            {teamMembers.map((member) => (
+              <a key={member.name} href={member.href}>
+                {member.name} - {member.role} <span aria-hidden="true">&rarr;</span>
+                <p className="text-sm text-gray-400">{member.description}</p>
               </a>
             ))}
           </div>
@@ -72,9 +91,7 @@ export default function About() {
             ))}
           </dl>
         </div>
-
       </div>
- 
     </div>
-  )
+  );
 }

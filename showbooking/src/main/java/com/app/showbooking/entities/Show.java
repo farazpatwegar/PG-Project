@@ -37,14 +37,14 @@ public class Show {
 	private LocalDate showDate;
 	
 	@DateTimeFormat(pattern = "hh:mm:ss")
-	@Column(name="show_time",nullable = false)
+	@Column(name="show_time")
 	private LocalTime showTime;
 	
-	@OneToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
-	@JoinColumn(name="movie_id",nullable=false)
+	@OneToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name="movie_id",nullable = false)
 	private Movie movie;
 	
-	@OneToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+	@OneToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name="screen_id",nullable = false)
 	private Screen screen;
 

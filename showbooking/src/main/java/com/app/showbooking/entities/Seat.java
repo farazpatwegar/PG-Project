@@ -1,13 +1,10 @@
 package com.app.showbooking.entities;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -25,8 +22,7 @@ import lombok.ToString;
 public class Seat {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="seat_id")
+	@Column(name="seat_id",unique =  true)
 	private Long seatId;
 	
 	@Enumerated(EnumType.STRING)
@@ -41,7 +37,7 @@ public class Seat {
 //	@JoinColumn(name="user_id",nullable = false)
 //	private User user; 
 	
-	@ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name="screen_id",nullable = false)
 	private Screen screen;
 

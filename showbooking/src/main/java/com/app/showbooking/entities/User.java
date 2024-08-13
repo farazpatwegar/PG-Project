@@ -46,14 +46,14 @@ public class User {
 		
 	}
 
-	public User(String firstName, String lastName, String email, String password, Role role, String contactNumber,
+	public User(String firstName, String lastName, String email, String password, String contactNumber,
 			String address) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
 		this.password = password;
-		this.role = role;
+		this.role = Role.valueOf("Customer".toUpperCase()) ;
 		this.contactNumber = contactNumber;
 		this.address = address;
 	}

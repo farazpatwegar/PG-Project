@@ -4,6 +4,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.app.showbooking.entities.User;
 
-public interface AdminRepository extends JpaRepository<User, Long> {
+public interface UserRepository extends JpaRepository<User,Long> {
+
+	
+	User findByEmail(String email);
 
 }

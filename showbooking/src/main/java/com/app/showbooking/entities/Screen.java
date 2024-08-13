@@ -2,8 +2,6 @@ package com.app.showbooking.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -19,8 +17,7 @@ import lombok.ToString;
 public class Screen {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="screen_id")
+	@Column(name="screen_id",unique = true)
 	private Long screenId;
 	
 	@Column(name="total_seats")

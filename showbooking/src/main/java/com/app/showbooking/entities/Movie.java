@@ -1,6 +1,5 @@
 package com.app.showbooking.entities;
 
-import java.sql.Time;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
@@ -22,37 +21,39 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity
-@Table(name = "movies")
+@Table(name="movies")
 @Getter
 @Setter
 @ToString
 public class Movie {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "movie_id")
+	@Column(name="movie_id")
 	private Long movieId;
-	@DateTimeFormat(pattern = "HH:MM:SS")
+	@DateTimeFormat(pattern = "hh:mm:ss")
 	private LocalTime duration;
 	@Column(length = 200)
 	private String description;
 	@Column(length = 20)
 	private String title;
-
-	private double rating;
+	
+	private  double rating;
 	private String language;
-	@Column(name = "release_date")
+	@Column(name="release_date")
 	private LocalDate releaseDate;
-
-	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	@JoinColumn(name = "user_id", nullable = false)
-	private User user;
+	
+//	@ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+//	@JoinColumn(name="user_id",nullable=false)
+//	private User user;
+	
+	
 
 	public Movie() {
 		super();
 	}
 
 	public Movie(LocalTime duration, String description, String title, double rating, String language,
-			LocalDate releaseDate, User user) {
+			LocalDate releaseDate) {
 		super();
 		this.duration = duration;
 		this.description = description;
@@ -60,17 +61,25 @@ public class Movie {
 		this.rating = rating;
 		this.language = language;
 		this.releaseDate = releaseDate;
-		this.user = user;
 	}
 
-	public Movie(Movie otherMovie) {
-		this.duration = otherMovie.duration;
-		this.description = otherMovie.description;
-		this.title = otherMovie.title;
-		this.rating = otherMovie.rating;
-		this.language = otherMovie.language;
-		this.releaseDate = otherMovie.releaseDate;
-		this.user = otherMovie.user;
-	}
+
+
+//	public Movie(LocalTime duration, String description, String title, double rating, String language,
+//			LocalDate releaseDate, User user) {
+//		super();
+//		this.duration = duration;
+//		this.description = description;
+//		this.title = title;
+//		this.rating = rating;
+//		this.language = language;
+//		this.releaseDate = releaseDate;
+//		this.user = user;
+//	}
+	
+	
+
+
+
 
 }

@@ -1,11 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 
 const PaymentPage = () => {
   return (
     <div className="min-h-screen bg-gray-100 p-8 flex justify-center items-center">
       <div className="bg-white p-6 rounded-lg shadow-lg max-w-lg w-full">
         <h3 className="text-2xl font-bold text-center mb-6">Payment</h3>
-        
+
         <div className="space-y-4">
           <div className="flex justify-between">
             <label className="method card flex items-center p-2 border rounded cursor-pointer">
@@ -98,12 +99,12 @@ const PaymentPage = () => {
         </div>
 
         <div className="flex justify-between mt-6">
-          <button
-            type="button"
-            className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+          <Link
+            to="/Eticket"
+            className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 flex items-center justify-center"
           >
             Confirm Payment
-          </button>
+          </Link>
           <button
             type="button"
             className="px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-700"

@@ -54,7 +54,6 @@ public class AdminServiceImpl implements AdminService {
 			movie.setRating(otherMovie.getRating());
 			movie.setLanguage(otherMovie.getLanguage());
 			movie.setReleaseDate(otherMovie.getReleaseDate());
-			movie.setUser(otherMovie.getUser());
 			return movie;
 		}
 		return null;

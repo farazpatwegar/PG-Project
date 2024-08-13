@@ -1,19 +1,19 @@
-// src/components/ShowSelectionPage.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Dialog } from '@headlessui/react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
 const ShowSelectionPage = () => {
   const [availableShows, setAvailableShows] = useState([]);
   const [selectedDate, setSelectedDate] = useState('');
   const [selectedTime, setSelectedTime] = useState('');
   const [showModal, setShowModal] = useState(false);
+  const navigate = useNavigate(); // Initialize useNavigate
 
-  
   useEffect(() => {
     const fetchAvailableShows = async () => {
       try {
-        const response = await axios.get('/api/shows/available');
+        const response = await axios.get('http://localhost:8080/admin/getAllShows');
         setAvailableShows(response.data);
       } catch (error) {
         console.error('Error fetching available shows:', error);
@@ -47,8 +47,17 @@ const ShowSelectionPage = () => {
     }
   };
 
-  const dates = [...new Set(availableShows.map(show => show.date))];
-  const times = availableShows.filter(show => show.date === selectedDate).map(show => show.time);
+  const handleModalConfirm = () => {
+    // Navigate to SeatSelection page with selected date and time
+    navigate('/seatselection', {
+      state: { date: selectedDate, time: selectedTime }
+    });
+  };
+
+  const dates = [...new Set(availableShows.map(show => show.showDate))];
+  const times = availableShows
+    .filter(show => show.showDate === selectedDate)
+    .map(show => show.showTime);
 
   return (
     <div className="p-4 max-w-2xl mx-auto">
@@ -116,10 +125,13 @@ const ShowSelectionPage = () => {
             </p>
             <div className="mt-4 flex justify-end">
               <button
-                onClick={() => setShowModal(false)}
+                onClick={() => {
+                  setShowModal(false);
+                  handleModalConfirm(); // Navigate to SeatSelection page
+                }}
                 className="px-4 py-2 bg-blue-600 text-white rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
               >
-                Close
+                Proceed to Seat Selection
               </button>
             </div>
           </Dialog.Panel>

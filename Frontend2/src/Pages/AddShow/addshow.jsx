@@ -1,3 +1,4 @@
+// src/components/AddShow.jsx
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -16,10 +17,10 @@ export default function AddShow() {
     // Fetch movies and screens from your API
     const fetchData = async () => {
       try {
-        const movieResponse = await axios.get('/api/movies');
+        const movieResponse = await axios.get('http://localhost:8080/admin/getAllMovies');
         setMovies(movieResponse.data);
 
-        const screenResponse = await axios.get('/api/screens');
+        const screenResponse = await axios.get('http://localhost:8080/admin/getAllScreens');
         setScreens(screenResponse.data);
       } catch (error) {
         console.error('Error fetching data', error);
@@ -37,7 +38,9 @@ export default function AddShow() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('/api/shows', show);
+      console.log('Submitting data:', show); // Log the data being sent
+      const response = await axios.post('http://localhost:8080/admin/addNewShow', show);
+      console.log('Show added successfully:', response.data);
       // Clear the form after successful submission
       setShow({
         showDate: '',
@@ -46,7 +49,7 @@ export default function AddShow() {
         screenId: '',
       });
     } catch (error) {
-      console.error('Error adding show', error);
+      console.error('Error adding show:', error.response ? error.response.data : error.message);
     }
   };
 
@@ -106,7 +109,7 @@ export default function AddShow() {
               <option value="">Select a screen</option>
               {screens.map(screen => (
                 <option key={screen.screenId} value={screen.screenId}>
-                  {screen.name}
+                  {screen.screenId}
                 </option>
               ))}
             </select>

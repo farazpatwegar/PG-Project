@@ -3,6 +3,7 @@ package com.app.showbooking.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,7 +17,6 @@ import com.app.showbooking.dto.SeatDto;
 import com.app.showbooking.dto.ShowDto;
 import com.app.showbooking.entities.Movie;
 import com.app.showbooking.entities.Screen;
-import com.app.showbooking.entities.Show;
 import com.app.showbooking.exceptions.CustomException;
 import com.app.showbooking.services.MovieService;
 import com.app.showbooking.services.ScreenService;
@@ -24,7 +24,7 @@ import com.app.showbooking.services.SeatService;
 import com.app.showbooking.services.ShowService;
 
 @RestController
-//@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "*")
 @RequestMapping("/admin")
 public class AdminController {
 
@@ -122,19 +122,7 @@ public class AdminController {
 //		}
 //	}
 	
-	@PostMapping("/addNewShow")
-	public ResponseEntity<?> addNewShow(@RequestBody ShowDto newShowDto){
-		try {
-			return new ResponseEntity<>(showService.addNewShow(newShowDto), HttpStatus.CREATED);
-			
-		}
-		catch(Exception e)
-		{
-			return new ResponseEntity<>(e.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);
-		}
-	}
-	
-	
+
 	@DeleteMapping("/deleteShow/{showId}")
 	public ResponseEntity<?> deleteShow(@PathVariable Long showId){
 		try {

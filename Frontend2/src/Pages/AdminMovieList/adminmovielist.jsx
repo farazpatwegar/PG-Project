@@ -6,7 +6,7 @@ const AdminMovieList = () => {
 
   useEffect(() => {
     // Fetch the movie list from the backend
-    axios.get('http://localhost:8080/admin/getallmovies')
+    axios.get('http://localhost:8080/admin/getAllMovies')
       .then(response => {
         setMovies(response.data);
       })
@@ -16,15 +16,18 @@ const AdminMovieList = () => {
   }, []);
 
   const deleteMovie = (movieId) => {
-    // Delete the movie from the backend
-    axios.delete(`/api/movies/${movieId}`)
-      .then(response => {
-        // Remove the movie from the state
-        setMovies(movies.filter(movie => movie.movieId !== movieId));
-      })
-      .catch(error => {
-        console.error('Error deleting movie:', error);
-      });
+    // Confirm before deleting
+    if (window.confirm("Are you sure you want to delete this movie?")) {
+      // Delete the movie from the backend
+      axios.delete(`http://localhost:8080/admin/deleteMovie/${movieId}`)
+        .then(response => {
+          // Remove the movie from the state
+          setMovies(movies.filter(movie => movie.movieId !== movieId));
+        })
+        .catch(error => {
+          console.error('Error deleting movie:', error);
+        });
+    }
   };
 
   return (

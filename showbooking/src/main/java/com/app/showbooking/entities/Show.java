@@ -26,27 +26,26 @@ import lombok.ToString;
 @Setter
 @ToString
 public class Show {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="show_id")
-	private Long showId;
-	
-	
-	@DateTimeFormat(pattern = "dd/MM/yyyy")
-	@Column(name="show_date",nullable = false)
-	private LocalDate showDate;
-	
-	@DateTimeFormat(pattern = "hh:mm:ss")
-	@Column(name="show_time")
-	private LocalTime showTime;
-	
-	@OneToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name="movie_id",nullable = false)
-	private Movie movie;
-	
-	@OneToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name="screen_id",nullable = false)
-	private Screen screen;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="show_id")
+    private Long showId;
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @Column(name="show_date", nullable = false)
+    private LocalDate showDate;
+
+    @DateTimeFormat(pattern = "HH:mm:ss")
+    @Column(name="show_time", nullable = false)
+    private LocalTime showTime;
+
+    @OneToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name="movie_id", nullable = false)
+    private Movie movie;
+
+    @OneToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name="screen_id", nullable = false)
+    private Screen screen;
 
 	
 	public Show() {

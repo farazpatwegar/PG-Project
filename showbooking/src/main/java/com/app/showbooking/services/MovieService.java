@@ -25,4 +25,8 @@ public interface MovieService {
 	Movie updateMovie(Long id,Movie updMovie);
 	
 	Movie getMovieById(Long id);
+
+	Movie getMovieDetailsByMovieTitle(String movieTitle);
+
+	List<Movie> searchMovie(String searchTerm);
 }

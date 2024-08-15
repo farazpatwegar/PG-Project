@@ -83,4 +83,21 @@ public class MovieServiceImpl implements MovieService{
 			
 	}
 
+	@Override
+	public Movie getMovieDetailsByMovieTitle(String movieTitle) {
+		Movie movie=movieRepository.findByTitle(movieTitle);
+		if(movie!=null)
+			return movie;
+		else
+			throw new CustomException("So such movie present!!");
+	}
+
+	@Override
+	public List<Movie> searchMovie(String searchTerm) {
+		List<Movie> movieList=movieRepository.searchMovies(searchTerm);
+		if(movieList.isEmpty())
+			throw new CustomException("No matching movies found!!");
+		return movieList;
+	}
+
 }

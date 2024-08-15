@@ -45,8 +45,22 @@ public class Payment {
 	@Column(name="payment_date_time")
 	private LocalDateTime paymentDateTime;
 	
+	@Column(name="card_holder_name")
+	private String cardHolderName;
 	
-	@OneToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+	@Column(name="card_number",unique = true)
+	private String cardNumber;
+	
+	@Column(name="expiry_month")
+	private int expiryMonth;
+	
+	@Column(name="expiry_year")
+	private int expiryYear;
+	
+	private int cvv;
+	
+	
+	@OneToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name="user_id",nullable = false)
 	private User user;
 

@@ -3,6 +3,7 @@ package com.app.showbooking.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,15 +18,19 @@ import com.app.showbooking.dto.ShowDto;
 import com.app.showbooking.entities.Movie;
 import com.app.showbooking.entities.Screen;
 import com.app.showbooking.entities.Show;
+import com.app.showbooking.entities.Ticket;
 import com.app.showbooking.exceptions.CustomException;
+import com.app.showbooking.services.ContactService;
 import com.app.showbooking.services.MovieService;
+import com.app.showbooking.services.PaymentService;
 import com.app.showbooking.services.ScreenService;
 import com.app.showbooking.services.SeatService;
 import com.app.showbooking.services.ShowService;
+import com.app.showbooking.services.TicketService;
 import com.app.showbooking.services.UserService;
 
 @RestController
-//@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "*")
 @RequestMapping("/admin")
 public class AdminController {
 
@@ -43,6 +48,14 @@ public class AdminController {
 	
 	@Autowired
 	private UserService userService;
+	@Autowired
+	private ContactService contactService;
+	
+	@Autowired
+	private PaymentService paymentService;
+	
+	@Autowired
+	private TicketService ticketService;
 
 	
 
@@ -255,5 +268,48 @@ public class AdminController {
 		}
 	}
 	
+	//addNewUser(register new user) is present in Home Controller
+	//updateUser is present in Customer Controller
 	
+	
+	//=========================================Contact CRUD=============================================
+	@GetMapping("/getAllContactDetails")
+	public ResponseEntity<?> getAllContactDetails() {
+		try {
+
+			return new ResponseEntity<>(contactService.getAllContactDetails(), HttpStatus.OK);
+		} catch (CustomException e) {
+			return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
+		}
+
+	}
+	
+	//addNewContactDetails is present in Customer Controller
+	
+
+	//=========================================Payment CRUD=============================================
+	@GetMapping("/getAllPayments")
+	public ResponseEntity<?> getAllPayments(){
+		try {
+			return new ResponseEntity<>(paymentService.getAllPayments(),HttpStatus.OK);
+		}
+		catch(Exception e) {
+			return new ResponseEntity<>(e.getMessage(),HttpStatus.NOT_FOUND);
+		}
+	}
+	
+	//addnewpaymentdetails  => in customer controller
+	
+	
+
+	//=========================================Ticket CRUD=============================================
+	@GetMapping("/getAllTickets")
+	public ResponseEntity<?> getAllTickets(){
+		try {
+			return new ResponseEntity<>(ticketService.getAllTickets(),HttpStatus.OK);
+		}
+		catch(Exception e) {
+			return new ResponseEntity<>(e.getMessage(),HttpStatus.NOT_FOUND);
+		}
+	}
 }

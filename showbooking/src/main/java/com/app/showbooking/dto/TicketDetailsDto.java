@@ -3,11 +3,6 @@ package com.app.showbooking.dto;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-import javax.persistence.Column;
-import javax.persistence.Id;
-
-import org.springframework.format.annotation.DateTimeFormat;
-
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -15,16 +10,15 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class ShowDto {
+public class TicketDetailsDto {
+//	private Long ticket_id;
 
-	private Long showId;
-	
+	private String firstName;
+	private String lastName;
 	private LocalDate showDate;
-
 	private LocalTime showTime;
-
-	private Long movie_id;
-
-	private Long screen_id;
-
+	private String movieTitle;
+	private Long screenNumber;
+	private Long seatNumber;
+	private double paymentAmount;
 }

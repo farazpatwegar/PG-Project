@@ -1,0 +1,85 @@
+==============================USERS===================================
+
+
+INSERT INTO `users` (`address`, `contact_number`, `email`, `first_name`, `last_name`, `password`, `role`) VALUES
+('B-12, Sector 15', '9812345678', 'rahul.kumar@example.com', 'Rahul', 'Kumar', 'password123', 'CUSTOMER'),
+('C-45, Vasant Kunj', '9823456789', 'meera.sharma@example.com', 'Meera', 'Sharma', 'password123', 'CUSTOMER'),
+('A-20, Greater Kailash', '9834567890', 'ajay.verma@example.com', 'Ajay', 'Verma', 'password123', 'ADMIN'),
+('D-32, Dwarka', '9845678901', 'anita.rani@example.com', 'Anita', 'Rani', 'password123', 'CUSTOMER'),
+('E-78, Noida', '9856789012', 'sunil.patel@example.com', 'Sunil', 'Patel', 'password123', 'CUSTOMER'),
+('F-11, Rohini', '9867890123', 'neha.agarwal@example.com', 'Neha', 'Agarwal', 'password123', 'ADMIN'),
+('G-23, Connaught Place', '9878901234', 'ravi.sharma@example.com', 'Ravi', 'Sharma', 'password123', 'CUSTOMER'),
+('H-34, Punjabi Bagh', '9889012345', 'swati.singh@example.com', 'Swati', 'Singh', 'password123', 'CUSTOMER'),
+('I-45, Lajpat Nagar', '9890123456', 'vikas.gupta@example.com', 'Vikas', 'Gupta', 'password123', 'ADMIN'),
+('J-56, Saket', '9901234567', 'neeraj.jain@example.com', 'Neeraj', 'Jain', 'password123', 'CUSTOMER');
+
+
+=====================MOVIES==================================================
+
+INSERT INTO `movies` (`description`, `duration`, `language`, `rating`, `release_date`, `title`) VALUES
+('A gripping drama about a family struggling with societal pressures.', '02:20:00', 'Hindi', 8.4, '2024-01-15', 'Family Bonds'),
+('An action-packed thriller following a secret agent on a high-stakes mission.', '02:30:00', 'Tamil', 8.7, '2024-02-20', 'The Secret Agent'),
+('A romantic comedy exploring the ups and downs of love in a bustling city.', '01:50:00', 'Hindi', 7.9, '2024-03-10', 'City Love'),
+('A heartwarming story about a young boy’s journey to find his true identity.', '01:45:00', 'Telugu', 8.1, '2024-04-05', 'The Lost Boy'),
+('A historical epic depicting the life of a legendary freedom fighter.', '03:00:00', 'Kannada', 9.0, '2024-05-18', 'Freedom Fighter'),
+('A thrilling suspense film centered around a high-profile heist.', '02:10:00', 'Hindi', 8.3, '2024-06-12', 'The Heist'),
+('A musical drama celebrating the rich cultural heritage of Rajasthan.', '02:25:00', 'Hindi', 8.2, '2024-07-20', 'Desert Rhythms'),
+('A fantasy film about a young princess who must save her kingdom from dark forces.', '02:00:00', 'Telugu', 8.5, '2024-08-15', 'The Royal Quest'),
+('An emotional story of a mother’s sacrifice and love for her children.', '01:55:00', 'Bengali', 8.6, '2024-09-25', 'Mother’s Love'),
+('A light-hearted comedy about a group of friends and their hilarious adventures.', '01:40:00', 'Marathi', 7.8, '2024-10-10', 'Friendship Follies'),
+('A drama set against the backdrop of a rural village and its struggles.', '02:05:00', 'Hindi', 7.9, '2024-11-05', 'Village Tales'),
+('A sci-fi film exploring futuristic technology and its impact on society.', '02:15:00', 'Tamil', 8.4, '2024-12-15', 'Tech Wars');
+
+=====================SHOW==================================================
+
+INSERT INTO `shows` (`show_date`, `show_time`, `movie_id`, `screen_id`) VALUES
+('2024-08-15', '10:00:00', 1, 1),
+('2024-08-15', '13:00:00', 2, 1),
+('2024-08-15', '16:00:00', 3, 1),
+('2024-08-15', '19:00:00', 4, 1),
+('2024-08-16', '11:00:00', 5, 1),
+('2024-08-16', '14:00:00', 6, 1),
+('2024-08-16', '17:00:00', 7, 1),
+('2024-08-16', '20:00:00', 8, 1),
+('2024-08-17', '12:00:00', 9, 1),
+('2024-08-17', '15:00:00', 10, 1),
+('2024-08-17', '18:00:00', 11, 1),
+('2024-08-17', '21:00:00', 12, 1),
+('2024-08-18', '10:30:00', 1, 1),
+('2024-08-18', '13:30:00', 2, 1),
+('2024-08-18', '16:30:00', 3, 1),
+('2024-08-18', '19:30:00', 4, 1),
+('2024-08-19', '12:00:00', 5, 1),
+('2024-08-19', '15:00:00', 6, 1),
+('2024-08-19', '18:00:00', 7, 1),
+('2024-08-19', '21:00:00', 8, 1),
+('2024-08-20', '14:00:00', 9, 1),
+('2024-08-20', '17:00:00', 10, 1),
+('2024-08-20', '20:00:00', 11, 1),
+('2024-08-21', '11:00:00', 12, 1),
+('2024-08-21', '14:00:00', 1, 1),
+('2024-08-21', '17:00:00', 2, 1),
+('2024-08-21', '20:00:00', 3, 1),
+('2024-08-22', '13:00:00', 4, 1),
+('2024-08-22', '16:00:00', 5, 1),
+('2024-08-22', '19:00:00', 6, 1),
+('2024-08-22', '22:00:00', 7, 1);
+
+
+====================================CONTACTUS==================================================
+
+
+INSERT INTO `contact_us_details` (`email`, `message`, `name`) VALUES
+('john.doe@example.com', 'I have an issue with my recent booking. Please assist.', 'John Doe'),
+('jane.smith@example.com', 'Your website is great, but I have some suggestions for improvement.', 'Jane Smith'),
+('mike.johnson@example.com', 'I would like to know more about your services and offers.', 'Mike Johnson'),
+('emily.davis@example.com', 'I am experiencing difficulties with the payment process.', 'Emily Davis'),
+('rohit.kumar@example.com', 'Can you provide more details about the movie schedules?', 'Rohit Kumar'),
+('anita.patel@example.com', 'The seats I booked are not showing up in my account.', 'Anita Patel'),
+('arjun.singh@example.com', 'Great experience overall. Would appreciate some additional features.', 'Arjun Singh'),
+('priya.sharma@example.com', 'I have a question regarding the refund policy.', 'Priya Sharma'),
+('rajesh.nair@example.com', 'The recent movie I watched had some technical issues.', 'Rajesh Nair'),
+('sonali.rao@example.com', 'Please help me with the cancellation of my last booking.', 'Sonali Rao'),
+('abhishek.mishra@example.com', 'I would like to provide feedback on the recent movie screening.', 'Abhishek Mishra'),
+('neha.sharma@example.com', 'I have a query about the loyalty program.', 'Neha Sharma');
+

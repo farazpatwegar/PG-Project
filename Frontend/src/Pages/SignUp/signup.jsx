@@ -13,9 +13,35 @@ export default function SignUp() {
 
   const navigate = useNavigate();
 
+  const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+  const validatePassword = (password) => password.length >= 8;
+
+  const validatePhoneNumber = (number) => /^[0-9]{10}$/.test(number);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
+    if (!firstName || !lastName || !email || !password || !contactNumber || !address) {
+      setErrorMessage('All fields are required.');
+      return;
+    }
+
+    if (!validateEmail(email)) {
+      setErrorMessage('Please enter a valid email address.');
+      return;
+    }
+
+    if (!validatePassword(password)) {
+      setErrorMessage('Password must be at least 8 characters long.');
+      return;
+    }
+
+    if (!validatePhoneNumber(contactNumber)) {
+      setErrorMessage('Please enter a valid 10-digit phone number.');
+      return;
+    }
+
     if (!agreed) {
       setErrorMessage('You must agree to the terms and conditions.');
       return;
@@ -28,24 +54,23 @@ export default function SignUp() {
       password,
       role: 'CUSTOMER', // Default role
       contactNumber,
-      address
+      address,
     };
-    
+
     try {
       const response = await fetch('http://localhost:8080/auth/register', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
         },
-        body: JSON.stringify(registerRequest)
+        body: JSON.stringify(registerRequest),
       });
-      
+
       if (response.ok) {
         const data = await response.json();
-        // Store user data in session storage
         sessionStorage.setItem('user', JSON.stringify(data));
         alert('Registration successful!');
-        navigate('/login'); // Redirect to login page
+        navigate('/login');
       } else {
         setErrorMessage('Registration failed. Please try again.');
       }
@@ -109,7 +134,6 @@ export default function SignUp() {
               />
             </div>
           </div>
-
           <div className="sm:col-span-2">
             <label htmlFor="email" className="block text-sm font-semibold leading-6 text-gray-900">
               Email
@@ -147,7 +171,6 @@ export default function SignUp() {
               Phone number
             </label>
             <div className="relative mt-2.5">
-   
               <input
                 id="contact-number"
                 name="contact-number"
@@ -160,7 +183,6 @@ export default function SignUp() {
               />
             </div>
           </div>
-
           <div className="sm:col-span-2">
             <label htmlFor="address" className="block text-sm font-semibold leading-6 text-gray-900">
               Address
@@ -170,6 +192,7 @@ export default function SignUp() {
                 id="address"
                 name="address"
                 type="text"
+                autoComplete="street-address"
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
                 className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -177,37 +200,28 @@ export default function SignUp() {
             </div>
           </div>
         </div>
-
-        <div className="mt-6 flex gap-x-4 text-sm leading-6 text-gray-600">
+        <div className="mt-8 flex gap-x-4 text-sm leading-6">
           <input
-            id="agree"
-            name="agree"
+            id="terms"
+            name="terms"
             type="checkbox"
             checked={agreed}
-            onChange={() => setAgreed(!agreed)}
+            onChange={(e) => setAgreed(e.target.checked)}
             className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
           />
-          <label htmlFor="agree" className="flex gap-x-2">
-            <span>I agree to the</span>
-            <a href="#" className="font-semibold text-indigo-600">
-              terms and conditions
-            </a>
+          <label htmlFor="terms" className="text-gray-600">
+            I agree to the <a href="#" className="font-semibold text-indigo-600">terms and conditions</a>.
           </label>
         </div>
-        
         {errorMessage && (
-          <p className="mt-4 text-red-600">{errorMessage}</p>
+          <div className="mt-4 text-red-600">{errorMessage}</div>
         )}
-
         <div className="mt-8">
           <button
             type="submit"
-            className="block w-full rounded-md bg-indigo-600 px-3.5 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm ring-1 ring-gray-900/10 hover:ring-gray-900/20"
+            className="block w-full rounded-md bg-indigo-600 px-3.5 py-1.5 text-base font-semibold text-white shadow-sm ring-1 ring-gray-900/10 hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-600"
           >
-            Sign Up
-            <span className="text-indigo-200" aria-hidden="true">
-              &rarr;
-            </span>
+            Create Account
           </button>
         </div>
       </form>

@@ -8,34 +8,36 @@ export default function UpdateProfile() {
   const [contactNumber, setContactNumber] = useState('');
   const [address, setAddress] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
-  const [userId, setUserId] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [userId, setUserId] = useState(null); // Initialize as null or empty string
 
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Fetch user data from session storage
     const user = JSON.parse(sessionStorage.getItem('user'));
-    if (user) {
-      setFirstName(user.firstName);
-      setLastName(user.lastName);
-      setContactNumber(user.contactNumber);
-      setAddress(user.address);
-      setUserId(user.id); // Set the userId for the update request
+    if (user && user.id) {
+      setFirstName(user.firstName || '');
+      setLastName(user.lastName || '');
+      setContactNumber(user.contactNumber || '');
+      setAddress(user.address || '');
+      setUserId(user.id); // Ensure this is a valid number
     } else {
-      // Redirect to login if no user data is found
       navigate('/login');
     }
   }, [navigate]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
+    setErrorMessage('');
 
-    const updateRequest = {
-      firstName,
-      lastName,
-      contactNumber,
-      address,
-    };
+    if (!firstName || !lastName || !contactNumber || !address || !userId) {
+      setErrorMessage('All fields are required.');
+      setLoading(false);
+      return;
+    }
+
+    const updateRequest = { firstName, lastName, contactNumber, address };
 
     try {
       const response = await fetch(`http://localhost:8080/customer/updateUser/${userId}`, {
@@ -48,16 +50,18 @@ export default function UpdateProfile() {
 
       if (response.ok) {
         const data = await response.json();
-        // Update user data in session storage
         sessionStorage.setItem('user', JSON.stringify(data));
         alert('Profile updated successfully!');
         navigate('/profile'); // Redirect to profile page
       } else {
-        setErrorMessage('Update failed. Please try again.');
+        const errorData = await response.json();
+        setErrorMessage(errorData.message || 'Update failed. Please try again.');
       }
     } catch (error) {
       console.error('Error:', error);
       setErrorMessage('An error occurred. Please try again.');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -165,8 +169,9 @@ export default function UpdateProfile() {
           <button
             type="submit"
             className="inline-block rounded-md px-3.5 py-1.5 text-base font-semibold leading-6 ring-1 ring-gray-900 ring-offset-gray-900 hover:ring-gray-900"
+            disabled={loading}
           >
-            Save Changes
+            {loading ? 'Saving...' : 'Save Changes'}
           </button>
         </div>
       </form>

@@ -5,10 +5,15 @@ import axios from 'axios';
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
+    setError('');
+
     try {
       const response = await axios.post('http://localhost:8080/auth/login', { email, password });
 
@@ -24,6 +29,9 @@ export default function Login() {
       }
     } catch (error) {
       console.error('Login failed', error);
+      setError('Invalid email or password. Please try again.');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -42,6 +50,8 @@ export default function Login() {
 
       <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
         <form onSubmit={handleSubmit} className="space-y-6">
+          {error && <div className="text-red-600 text-center">{error}</div>}
+
           <div>
             <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
               Email address
@@ -81,9 +91,10 @@ export default function Login() {
           <div>
             <button
               type="submit"
+              disabled={loading}
               className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
-              Sign in
+              {loading ? 'Signing in...' : 'Sign in'}
             </button>
           </div>
         </form>

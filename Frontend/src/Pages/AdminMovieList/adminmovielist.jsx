@@ -33,7 +33,7 @@ const AdminMovieList = () => {
   };
 
   const handleUpdate = (movie) => {
-    // Navigate to the AddMovie page with movie details
+    // Navigate to the AddMovie page with movie details for editing
     navigate('/addmovie', { state: { movie } });
   };
 

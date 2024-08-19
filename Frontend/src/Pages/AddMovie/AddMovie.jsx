@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useLocation } from 'react-router-dom';
 
 export default function AddMovie() {
+  const location = useLocation();
   const [movie, setMovie] = useState({
     title: '',
     releaseDate: '',
@@ -13,6 +15,12 @@ export default function AddMovie() {
 
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null);
+
+  useEffect(() => {
+    if (location.state && location.state.movie) {
+      setMovie(location.state.movie);
+    }
+  }, [location.state]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -34,10 +42,20 @@ export default function AddMovie() {
       duration: formattedDuration,
     };
 
-    axios.post('http://localhost:8080/admin/addNewMovie', movieData)
+    const url = location.state && location.state.movie
+      ? `http://localhost:8080/admin/updateMovie/${movie.movieId}`
+      : 'http://localhost:8080/admin/addNewMovie';
+
+    const method = location.state && location.state.movie ? 'put' : 'post';
+
+    axios({
+      method,
+      url,
+      data: movieData
+    })
       .then(response => {
-        setSuccess('Movie added successfully!');
-        console.log('Movie Added:', response.data);
+        setSuccess(location.state && location.state.movie ? 'Movie updated successfully!' : 'Movie added successfully!');
+        console.log('Movie:', response.data);
         setMovie({
           title: '',
           releaseDate: '',
@@ -48,15 +66,15 @@ export default function AddMovie() {
         });
       })
       .catch(error => {
-        setError('Error adding movie. Please try again.');
-        console.error('Error adding movie:', error);
+        setError('Error submitting movie. Please try again.');
+        console.error('Error submitting movie:', error);
       });
   };
 
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center">
       <div className="w-full max-w-lg p-8 bg-white shadow-lg rounded-lg">
-        <h1 className="text-2xl font-bold mb-8 text-center">Add Movie</h1>
+        <h1 className="text-2xl font-bold mb-8 text-center">{location.state && location.state.movie ? 'Update Movie' : 'Add Movie'}</h1>
         {error && <p className="mb-4 text-red-500">{error}</p>}
         {success && <p className="mb-4 text-green-500">{success}</p>}
         <form onSubmit={handleSubmit}>
@@ -131,12 +149,14 @@ export default function AddMovie() {
               required
             />
           </div>
-          <button
-            type="submit"
-            className="w-full py-2 px-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-500 transition-colors duration-300"
-          >
-            Add Movie
-          </button>
+          <div className="mt-8">
+            <button
+              type="submit"
+              className="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-500"
+            >
+              {location.state && location.state.movie ? 'Update Movie' : 'Add Movie'}
+            </button>
+          </div>
         </form>
       </div>
     </div>

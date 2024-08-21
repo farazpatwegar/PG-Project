@@ -47,19 +47,9 @@ export default function AdminPage() {
               View Payment List
             </button>
           </Link>
-          <Link to='/addscreen'>
-            <button className="w-full py-6 px-8 bg-yellow-700 text-white font-semibold text-lg rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105 hover:bg-yellow-600 hover:shadow-xl">
-              Add Screen
-            </button>
-          </Link>
           <Link to='/viewallshows'>
             <button className="w-full py-6 px-8 bg-teal-700 text-white font-semibold text-lg rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105 hover:bg-teal-600 hover:shadow-xl">
               List All Shows
-            </button>
-          </Link>
-          <Link to='/reports'>
-            <button className="w-full py-6 px-8 bg-orange-700 text-white font-semibold text-lg rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105 hover:bg-orange-600 hover:shadow-xl">
-              View Reports
             </button>
           </Link>
         </div>

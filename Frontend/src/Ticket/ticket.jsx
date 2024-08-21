@@ -38,13 +38,13 @@ const ETicket = () => {
             >
               <div className="flex-shrink-0">
                 <img
-                  src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/25240/only-god-forgives.jpg"
+                  src="https://media.istockphoto.com/id/2150387445/photo/classic-movie-night-essentials-with-clapperboard-popcorn-and-film-reel-on-blue-background.jpg?s=2048x2048&w=is&k=20&c=SccRVJuEXo3UJ4u9oof__nriSULKlhRocHOfrE8fWFM="
                   alt={`Movie: ${movie.title}`}
                   className="w-full h-40 object-cover rounded-lg border-4 border-yellow-500"
                 />
               </div>
               <div className="mt-4 flex flex-col items-center">
-                <p className="cinema text-xs font-semibold text-gray-400">MyShowz Entertainment PRESENTS</p>
+                <p className="cinema text-xs font-semibold text-gray-400">TickItNow Entertainment PRESENTS</p>
                 <p className="movie-title text-xl font-bold mt-2 text-yellow-300">{movie.title}</p>
                 <p className="text-sm font-medium text-gray-400">{movie.releaseDate} | {movie.duration}</p>
               </div>

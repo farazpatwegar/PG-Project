@@ -34,7 +34,6 @@ const PaymentList = () => {
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date & Time</th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Total Amount</th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Payment Mode</th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Ticket ID</th>
               </tr>
             </thead>
             <tbody className="bg-white divide-y divide-gray-200">
@@ -43,9 +42,9 @@ const PaymentList = () => {
                   <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{payment.paymentId}</td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{payment.user?.userId}</td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{new Date(payment.dateTime).toLocaleString()}</td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${payment.totalAmount.toFixed(2)}</td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{payment.paymentMode}</td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{payment.ticket?.ticketId}</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">&#8377; {payment.totalAmount.toFixed(2)}</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Card</td>
+      
                 </tr>
               ))}
             </tbody>

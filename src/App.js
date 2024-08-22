@@ -52,7 +52,6 @@ function App() {
             <Route path='/updateprofile' element={<UpdateProfile/>} />
             <Route path='/contactlist' element={<ContactList/>} />
             <Route path='/viewallshows' element={<ViewAllShows/>} />
-    
           </Routes>
         </div>
         <Footer/>
